@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FragmentsExample</string>
+    <string name="yay_fragments">Yay Fragments</string>
+    <string name="imageoftherecipe">ImageOfTheRecipe</string>
+</resources>
