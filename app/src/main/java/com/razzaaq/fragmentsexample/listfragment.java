@@ -17,7 +17,6 @@ public class listfragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view= inflater.inflate(R.layout.fragment_list, container, false);
         RecyclerView recyclerView=view.findViewById(R.id.recyclerList);
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext(),
