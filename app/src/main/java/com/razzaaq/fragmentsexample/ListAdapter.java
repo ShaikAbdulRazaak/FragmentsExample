@@ -1,6 +1,7 @@
 package com.razzaaq.fragmentsexample;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
     private Context context;
+    public static final String VIEWPAGER_FRAGMENT="viewpager_fragment";
 
     ListAdapter(Context context) {
         this.context = context;
@@ -37,9 +39,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> {
             public void onClick(View v) {
                 Toast.makeText(context, recipes.names[position], Toast.LENGTH_SHORT).show();
                 ViewPagerFragment viewPagerFragment=new ViewPagerFragment();
+                Bundle bundle=new Bundle();
+                bundle.putInt(ViewPagerFragment.KEY_RECIPE_INDEX,position);
+                viewPagerFragment.setArguments(bundle);
                 FragmentManager fragmentManager = ((AppCompatActivity) context).getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragmentsViewGroup, viewPagerFragment);
+                fragmentTransaction.replace(R.id.fragmentsViewGroup, viewPagerFragment,VIEWPAGER_FRAGMENT);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
