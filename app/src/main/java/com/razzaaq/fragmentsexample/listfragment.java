@@ -1,7 +1,6 @@
 package com.razzaaq.fragmentsexample;
 
 import android.os.Bundle;
-import android.telecom.ConnectionService;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ListFragment extends Fragment {
+public class listfragment extends Fragment {
 
     @Nullable
     @Override
